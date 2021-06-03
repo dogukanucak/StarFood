@@ -1,0 +1,15 @@
+:host {
+  --button-text-color: blue;
+  --button-padding: 1rem;
+  --button-border-color: blue;
+  --button-border-radius: 1px;
+  --button-border-type: solid;
+  --button-border-width: 1px;
+}
+
+button {
+  color: var(--button-text-color);
+  padding: var(--button-padding);
+  border: var(--button-border-width) var(--button-border-type)
+    var(--button-border-color);
+}
