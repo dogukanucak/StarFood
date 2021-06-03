@@ -1,0 +1,27 @@
+/*
+    SF Pro Display Font Definations
+*/
+
+@font-face {
+	font-family: "SfProDisplay";
+	src: url("../../fonts/SfProDisplay/SF-Pro-Display-Regular.otf")
+		format("opentype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "SfProDisplay";
+	src: url("../../fonts/SfProDisplay/SF-Pro-Display-Bold.otf")
+		format("opentype");
+	font-weight: bold;
+	font-style: bold;
+}
+
+@font-face {
+	font-family: "SfProDisplay";
+	src: url("../../fonts/SfProDisplay/SF-Pro-Display-Light.otf")
+		format("opentype");
+	font-weight: lighter;
+	font-style: lighter;
+}
