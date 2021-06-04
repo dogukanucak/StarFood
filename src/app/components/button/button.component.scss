@@ -1,15 +1,24 @@
+@use "settings-colors" as *;
+@use "settings-borders" as *;
+@use "settings-font-size" as *;
+@use "tools-colors" as *;
+
 :host {
-  --button-text-color: blue;
-  --button-padding: 1rem;
-  --button-border-color: blue;
-  --button-border-radius: 1px;
-  --button-border-type: solid;
-  --button-border-width: 1px;
+	--button-text-color: #{$secondary-text-color};
+	--button-background-color: #{$secondary-color};
+	--button-padding: 9px 9px;
+	--button-font-size: #{$button-font-size};
+	--button-border-color: #{$secondary-border-color};
+	--button-border-radius: #{$button-radius};
+	--button-border-type: solid;
+	--button-border-width: 1px;
 }
 
 button {
-  color: var(--button-text-color);
-  padding: var(--button-padding);
-  border: var(--button-border-width) var(--button-border-type)
-    var(--button-border-color);
+	color: var(--button-text-color);
+	padding: var(--button-padding);
+	font-size: var(--button-font-size);
+	border: var(--button-border-width) var(--button-border-type);
+
+	@include setBgColorAndHover(var(--button-background-color));
 }

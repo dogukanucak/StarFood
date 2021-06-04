@@ -1,10 +1,24 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 @Component({
-	selector: "app-button",
+	selector: "star-button",
 	templateUrl: "./button.component.html",
 	styleUrls: ["./button.component.scss"],
 })
 export class ButtonComponent {
+	/**
+	 * Button text
+	 */
 	@Input() title?: string;
+
+	/**
+	 * Emit custom click event on button click
+	 */
+	@Output() readonly onClick?: EventEmitter<Event> = new EventEmitter();
+
+	onButtonClick($event: Event): void {
+		if (this.onClick) {
+			this.onClick.emit($event);
+		}
+	}
 }
