@@ -1,0 +1,35 @@
+/**
+    MAIN THEME COLORS
+**/
+$primary-color: #171719 !default;
+$secondary-color: #286ffa !default;
+$action-color: #0dc74e !default;
+$content-background-color: #ffffff !default;
+$sidebar-background-color: #f6f6f6 !default;
+$aside-menu-background-color: #777777 !default;
+
+/**
+    TEXT COLORS
+**/
+$main-text-color: $primary-color;
+$secondary-text-color: #ffffff;
+
+/**
+    ACTIVE STATES
+**/
+$active-menu-color: $secondary-color !default;
+$active-aside-background: #ededed !default;
+
+/**
+    GENERIC ITEM COLORS
+**/
+$card-background-color: #737376 !default !default;
+$secondary-border-color: #2159c8 !default;
+
+/**
+    BADGE COLORS
+**/
+$grey-badge-color: #e0e0e0 !default;
+$delivery-badge-color: $secondary-color !default;
+$takeaway-color: #fc7501 !default;
+$cod-color: #9b870c !default;

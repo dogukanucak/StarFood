@@ -1,0 +1,7 @@
+// Sets simple background color with hover effect
+@mixin setBgColorAndHover($baseColor, $amount: 5%) {
+	background-color: $baseColor;
+	&:hover {
+		filter: brightness(calc(100% - #{$amount}));
+	}
+}
