@@ -1,0 +1,49 @@
+@use "settings-colors" as *;
+@use "settings-borders" as *;
+@use "tools-colors" as *;
+
+:host {
+	--background-color: #{$secondary-color};
+	--text-color: #{$secondary-text-color};
+	--padding: 8px 12px;
+	--border-radius: #{$badge-radius};
+	--border-width: 1px;
+	--cursor: default;
+}
+
+/* 
+    Size of badges
+*/
+:host(.small) {
+	--padding: 1px 3px;
+}
+
+/**
+    Color of badges
+**/
+:host(.badge--delivery) {
+	--background-color: #{$delivery-badge-color};
+}
+
+:host(.-badge--takeaway) {
+	--background-color: #{$takeaway-color};
+}
+
+:host(.badge--cod) {
+	--background-color: #{$cod-color};
+}
+
+:host(.badge--grey) {
+	--background-color: #{$grey-badge-color};
+	--text-color: #{$main-text-color};
+}
+
+span {
+	color: var(--text-color);
+	padding: var(--padding);
+	border: var(--border-width) solid var(--background-color);
+	border-radius: var(--border-radius);
+	cursor: var(--cursor);
+
+	@include setBgColorAndHover(var(--background-color));
+}
