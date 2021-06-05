@@ -4,6 +4,14 @@
 
 export const environment = {
 	production: false,
+	firebaseConfig: {
+		apiKey: "AIzaSyCEVrQkGZHCovOiVE3ikZmYYBI5AcUEWl8",
+		authDomain: "starfood-7933e.firebaseapp.com",
+		projectId: "starfood-7933e",
+		storageBucket: "starfood-7933e.appspot.com",
+		messagingSenderId: "914323976736",
+		appId: "1:914323976736:web:bda5610cc8087e83a50245",
+	},
 };
 
 /*
