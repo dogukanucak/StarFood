@@ -1,0 +1,24 @@
+<section class="menu__actions">
+	<ul class="menu__list menu__actions__list">
+		<li class="menu__list__item menu__list__item--action" *ngFor="let actionItem of actionMenuItems | async">
+			<a routerLink="{{ actionItem.routeLink }}" alt="order-icon"
+				><i class="icon icon-{{ actionItem.iconName }}"></i
+			></a>
+		</li>
+	</ul>
+</section>
+<section class="menu__list menu__nav">
+	<nav>
+		<ul>
+			<caption class="menu__list__header">
+				Order
+			</caption>
+			<li class="menu__list__item menu__list__item--order" *ngFor="let orderItem of orderMenuItems | async; index as i">
+				<a routerLink="{{ orderItem.route }}" [class.active]="i === activeOrderItemIndex"
+					><span class="order-type">{{ orderItem.text }}</span
+					><span class="order-amount">{{ orderItem.amount }}</span></a
+				>
+			</li>
+		</ul>
+	</nav>
+</section>

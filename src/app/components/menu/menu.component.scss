@@ -1,0 +1,91 @@
+@use "settings-layout" as *;
+@use "settings-colors" as *;
+
+:host {
+	--sidebar-width: #{$sidebar-width};
+	--padding-vertical: 1rem;
+	--action-menu-background-color: #{$aside-background-color};
+	--active-action-menu-background-color: #{$active-aside-background-color};
+	--navbar-background: #{$navbar-background-color};
+	--navbar-padding: 1.8rem 1rem;
+
+	--order-amount-text-color: #{$sub-text-color};
+	--order-type-active-color: #{$active-text-color};
+
+	--order-header-font-size: 3rem;
+	--order-item-font-size: 1.8rem;
+
+	display: grid;
+	grid-template-columns: var(--sidebar-width) 1fr;
+	grid-template-rows: 1fr;
+	height: 100%;
+}
+
+/* Menu List Wrapper */
+.menu__list {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: var(--padding-vertical);
+	height: 100%;
+	width: 100%;
+}
+
+.menu__list__header {
+	width: 100%;
+	display: block;
+	font-size: var(--order-header-font-size);
+	font-weight: bold;
+	padding: var(--navbar-padding);
+	margin-top: 0.5rem;
+	text-align: left;
+}
+
+.menu__list__item {
+	width: 100%;
+	padding: 1.5rem 0;
+	font-size: var(--order-item-font-size);
+
+	&:hover {
+		background-color: var(--active-action-menu-background-color);
+	}
+
+	a {
+		height: 100%;
+	}
+}
+
+/* Action Menu */
+.menu__actions__list {
+	background-color: var(--action-menu-background-color);
+}
+
+.menu__list__item--order {
+	--navbar-padding: 0.5rem 1rem;
+	a {
+		display: flex;
+		justify-content: space-between;
+		padding: var(--navbar-padding);
+	}
+
+	a.active {
+		color: var(--order-type-active-color);
+	}
+}
+
+/* Navigation Menu */
+.menu__nav {
+	background-color: var(--navbar-background);
+
+	nav {
+		width: 100%;
+		padding-bottom: var(--padding-vertical) 0;
+	}
+}
+
+.order-type {
+	font-weight: 500;
+}
+
+.order-amount {
+	color: var(--order-amount-text-color);
+}
