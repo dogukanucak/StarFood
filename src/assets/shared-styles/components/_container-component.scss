@@ -1,0 +1,15 @@
+@use "settings-colors" as *;
+@use "settings-borders" as *;
+
+:root {
+	--container-border: #{$container-radius};
+	--container-border-color: #{$container-border-color};
+	--padding: 1.5rem 1.5rem;
+}
+
+.container {
+	border: 1px solid var(--container-border-color);
+	border-radius: var(--container-border);
+	color: var(--container-border-color);
+	padding: var(--padding);
+}

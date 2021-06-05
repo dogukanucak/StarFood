@@ -1,0 +1,17 @@
+@mixin generateIcon($iconName, $size: 2.8rem, $type: "svg", $background-size: "contain") {
+	.icon-#{$iconName} {
+		font-size: $size;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.icon-#{$iconName}:before {
+		content: "";
+		display: block;
+		background: url("../../icons/#{$iconName}-icon.#{$type}");
+		background-size: $background-size;
+		height: 1em;
+		width: 1em;
+	}
+}

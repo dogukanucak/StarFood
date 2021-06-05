@@ -29,8 +29,8 @@ th,
 td,
 caption,
 hr {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 /**
@@ -38,7 +38,7 @@ hr {
   */
 abbr[title],
 dfn[title] {
-  cursor: help;
+	cursor: help;
 }
 
 /**
@@ -46,12 +46,22 @@ dfn[title] {
   */
 u,
 ins {
-  text-decoration: none;
+	text-decoration: none;
 }
 
 /**
   * Apply faux underlines to inserted text via `border-bottom`.
   */
 ins {
-  border-bottom: 1px solid;
+	border-bottom: 1px solid;
+}
+
+ul {
+	list-style: none;
+}
+
+a:visited,
+a:link {
+	text-decoration: none;
+	color: inherit;
 }

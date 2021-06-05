@@ -1,30 +1,45 @@
 /**
+ Gray / Black Colors
+**/
+
+$gray: #989899 !default;
+$gray-light-1: #cccccc !default;
+$gray-light-2: #e0e0e0 !default;
+$gray-light-3: #ededed !default;
+$gray-light-4: #f6f6f6 !default;
+$gray-light-5: #b4b4b5 !default;
+$gray-dark: #737376 !default;
+
+/**
     MAIN THEME COLORS
 **/
 $primary-color: #171719 !default;
 $secondary-color: #286ffa !default;
 $action-color: #0dc74e !default;
 $content-background-color: #ffffff !default;
-$sidebar-background-color: #f6f6f6 !default;
-$aside-menu-background-color: #777777 !default;
+$navbar-background-color: $gray-light-4 !default;
+$aside-background-color: $gray-light-3 !default;
 
 /**
     TEXT COLORS
 **/
 $main-text-color: $primary-color;
 $secondary-text-color: #ffffff;
+$sub-text-color: $gray-light-5;
+$active-text-color: #2a71fa;
 
 /**
     ACTIVE STATES
 **/
 $active-menu-color: $secondary-color !default;
-$active-aside-background: #ededed !default;
+$active-aside-background-color: $gray-light-4 !default;
 
 /**
     GENERIC ITEM COLORS
 **/
 $card-background-color: #737376 !default !default;
 $secondary-border-color: #2159c8 !default;
+$container-border-color: $gray-light-1 !default;
 
 /**
     BADGE COLORS
