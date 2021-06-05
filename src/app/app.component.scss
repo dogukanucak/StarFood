@@ -1,0 +1,18 @@
+@use "settings-layout" as *;
+
+:host {
+	--sidebar-width: #{$sidebar-width};
+	--nav-width: #{$nav-width};
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: calc(var(--nav-width) + var(--sidebar-width)) 1fr;
+	grid-template-rows: 100px 1fr;
+}
+
+.starapp__menu {
+	grid-row: 1 / -1;
+}
+
+main {
+	background-color: pink;
+}
