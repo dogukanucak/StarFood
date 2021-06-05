@@ -1,0 +1,9 @@
+:host {
+	--padding: 2rem 2rem;
+	display: flex;
+	padding: var(--padding);
+}
+
+i {
+	margin-right: 1rem;
+}
