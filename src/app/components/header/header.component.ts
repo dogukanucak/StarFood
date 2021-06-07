@@ -8,18 +8,17 @@ import { BehaviorSubject, Subscription } from "rxjs";
 	styleUrls: ["./header.component.scss"],
 })
 export class HeaderComponent implements OnInit {
+	private routeEventSubscription!: Subscription;
 	readonly currentRouteTextSubject = new BehaviorSubject("");
-	private routeEventSubscription: Subscription = new Subscription();
-	constructor(private router: ActivatedRoute) {}
+	constructor(private router: Router) {}
 
 	ngOnInit(): void {
-		// this.routeEventSubscription = this.router.events.subscribe((event) => {
-		// 	console.log("Event: ", event);
-		// 	if (event instanceof NavigationStart || event instanceof NavigationEnd) {
-		// 		const routeText = this.getRouteTextByURL(event.url);
-		// 		this.currentRouteTextSubject.next(routeText);
-		// 	}
-		// });
+		this.routeEventSubscription = this.router.events.subscribe((event) => {
+			if (event instanceof NavigationStart || event instanceof NavigationEnd) {
+				const routeText = this.getRouteTextByURL(event.url);
+				this.currentRouteTextSubject.next(routeText);
+			}
+		});
 	}
 
 	private getRouteTextByURL(url: string): string {
@@ -27,7 +26,7 @@ export class HeaderComponent implements OnInit {
 		switch (url) {
 			case "/create":
 				return "Create Order";
-			case "accepted":
+			case "/accepted":
 				return "Accepted";
 			default:
 				throw new Error(`No Text Could Be Found For Specified URL: ${url}`);

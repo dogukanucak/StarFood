@@ -1,20 +1,20 @@
-import { OrderType } from "../models/order.model";
+import { OrderStateEnum } from "../models/order.model";
 
-export function getOrderTypeResourceText(type: OrderType): string {
+export function getOrderStateEnumResourceText(type: OrderStateEnum): string {
 	switch (type) {
-		case OrderType.Accepted:
+		case OrderStateEnum.Accepted:
 			return "Accepted";
-		case OrderType.Completed:
+		case OrderStateEnum.Completed:
 			return "Completed";
-		case OrderType.Cooking:
+		case OrderStateEnum.Cooking:
 			return "Cooking";
-		case OrderType.Delivered:
+		case OrderStateEnum.Delivered:
 			return "Delivered";
-		case OrderType.New:
+		case OrderStateEnum.New:
 			return "New Order";
-		case OrderType.ParcelReady:
+		case OrderStateEnum.ParcelReady:
 			return "Parcel Ready";
 		default:
-			throw new TypeError("Provided Order Type Is Not In OrderType Enum List");
+			throw new TypeError("Provided Order Type Is Not In OrderStateEnum Enum List");
 	}
 }

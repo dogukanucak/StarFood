@@ -4,7 +4,7 @@ import { MenuActionItem } from "src/app/models/menu.model";
 import { OrderState } from "src/app/models/order.model";
 import { ActionMenuService } from "src/app/services/menu/actionmenu.service";
 import { OrderMenuService } from "src/app/services/menu/ordermenu.service";
-import { getOrderTypeResourceText } from "src/app/utilities/enum-resource.helper";
+import { getOrderStateEnumResourceText } from "src/app/utilities/enum-resource.helper";
 
 type OrderStateWithText = OrderState & {
 	text?: string;
@@ -45,7 +45,7 @@ export class MenuComponent implements OnInit, OnDestroy {
 	private connectToOrderMenu(): void {
 		const orderMenuSubscription = this.orderMenuService.menuItemsSubject.subscribe((items) => {
 			const orderItems: OrderStateWithText[] = items.map((item: OrderStateWithText) => {
-				item.text = getOrderTypeResourceText(item.type);
+				item.text = getOrderStateEnumResourceText(item.type);
 				return item;
 			});
 			this.orderMenuItems.next(orderItems);

@@ -14,11 +14,9 @@ export class ButtonComponent {
 	/**
 	 * Emit custom click event on button click
 	 */
-	@Output() readonly onClick?: EventEmitter<Event> = new EventEmitter();
+	@Output() readonly onClick: EventEmitter<Event> = new EventEmitter();
 
 	onButtonClick($event: Event): void {
-		if (this.onClick) {
-			this.onClick.emit($event);
-		}
+		this.onClick.emit($event);
 	}
 }

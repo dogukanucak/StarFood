@@ -1,4 +1,4 @@
-export enum OrderType {
+export enum OrderStateEnum {
 	New = 0,
 	Accepted = 1,
 	Cooking = 2,
@@ -7,8 +7,13 @@ export enum OrderType {
 	Completed = 5,
 }
 
+export enum TransferTypeEnum {
+	Delivery = 0,
+	Takeaway = 1,
+}
+
 export type OrderState = {
 	amount: number;
-	type: OrderType;
+	type: OrderStateEnum;
 	route: string;
 };
