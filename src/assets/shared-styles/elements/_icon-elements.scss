@@ -1,6 +1,7 @@
 @use "tools-icons" as *;
 
 @include generateIcon("order");
+@include generateIcon("printer");
 @include generateIcon("receipt");
 @include generateIcon("hamburger", 1.7rem, $background-size: "cover");
 @include generateIcon("settings");

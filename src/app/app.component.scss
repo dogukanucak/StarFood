@@ -3,16 +3,23 @@
 :host {
 	--sidebar-width: #{$sidebar-width};
 	--nav-width: #{$nav-width};
+	--content-padding: 2.8rem;
+
 	min-height: 100vh;
 	display: grid;
 	grid-template-columns: calc(var(--nav-width) + var(--sidebar-width)) 1fr;
 	grid-template-rows: 100px 1fr;
 }
 
-.starapp__menu {
-	grid-row: 1 / -1;
+.starapp {
+	height: 100%;
 }
 
-main {
-	background-color: pink;
+.starapp__content {
+	height: 100%;
+	padding: var(--content-padding);
+}
+
+.starapp__menu {
+	grid-row: 1 / -1;
 }

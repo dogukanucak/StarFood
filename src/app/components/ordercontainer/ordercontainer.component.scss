@@ -1,0 +1,54 @@
+@use "settings-colors" as *;
+@use "settings-layout" as *;
+
+.order-container {
+	color: $primary-color;
+	font-size: 1.8rem;
+}
+
+.order-container__item:not(:first-child) {
+	margin-top: 3rem;
+}
+
+.order-container__item__title {
+	display: block;
+	color: $gray-dark;
+	margin-bottom: 3px;
+}
+
+.order-items {
+	display: flex;
+	align-items: center;
+}
+
+.info-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.additional-info {
+	flex: 5;
+}
+
+.action-info {
+	display: flex;
+	align-items: center;
+}
+
+.action-items {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+}
+
+.badge--grey {
+	margin-left: 2rem;
+}
+
+strong {
+	font-weight: "normal";
+}
+
+hr {
+	margin-bottom: 1.5rem;
+}
