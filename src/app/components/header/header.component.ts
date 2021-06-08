@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
 import { ActivatedRoute, NavigationEnd, NavigationStart, Router } from "@angular/router";
 import { BehaviorSubject, Subscription } from "rxjs";
 
@@ -7,7 +7,7 @@ import { BehaviorSubject, Subscription } from "rxjs";
 	templateUrl: "./header.component.html",
 	styleUrls: ["./header.component.scss"],
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
 	private routeEventSubscription!: Subscription;
 	readonly currentRouteTextSubject = new BehaviorSubject("");
 	constructor(private router: Router) {}
@@ -19,6 +19,10 @@ export class HeaderComponent implements OnInit {
 				this.currentRouteTextSubject.next(routeText);
 			}
 		});
+	}
+
+	ngOnDestroy(): void {
+		this.routeEventSubscription.unsubscribe();
 	}
 
 	private getRouteTextByURL(url: string): string {
