@@ -14,11 +14,27 @@
 	--button-border-width: 1px;
 }
 
+:host(.btn-action) {
+	--button-padding: 2rem 10rem;
+}
+
+:host(.btn-success) {
+	--button-background-color: #{$success-color};
+	--button-border-color: #{$success-color};
+}
+
+:host(.btn-cancel) {
+	--button-background-color: none;
+	--button-text-color: #{$primary-color};
+	--button-padding: 2rem 10rem;
+	--button-border-color: #{$gray-line-color};
+}
+
 button {
 	color: var(--button-text-color);
 	padding: var(--button-padding);
 	font-size: var(--button-font-size);
-	border: var(--button-border-width) var(--button-border-type);
+	border: var(--button-border-width) var(--button-border-type) var(--button-border-color);
 
 	@include setBgColorAndHover(var(--button-background-color));
 }

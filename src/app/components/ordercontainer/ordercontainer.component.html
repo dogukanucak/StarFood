@@ -1,41 +1,40 @@
-<hr />
 <section class="container order-container">
 	<div class="info-container order-container__item">
 		<!-- Order Number -->
 		<div>
 			<span class="order-container__item__title">Order Number</span>
-			<strong>#98888</strong>
+			<strong>#{{ order.ID }}</strong>
 		</div>
 
 		<!-- Date Time -->
 		<div>
 			<span class="order-container__item__title">Date & Time</span>
-			<strong>01/01/2021</strong>
+			<strong>{{ order.Date | date: "medium" }}</strong>
 		</div>
 
 		<!-- Name -->
 		<div>
 			<span class="order-container__item__title">Name</span>
-			<strong>Lucas Luca</strong>
+			<strong>{{ order.RequesterName }}</strong>
 		</div>
 
 		<!-- Contact -->
 		<div>
 			<span class="order-container__item__title">Contact</span>
-			<strong>+3011231241412</strong>
+			<strong>{{ order.RequesterContact }}</strong>
 		</div>
 
 		<!-- Trans Type -->
 		<div>
 			<span class="order-container__item__title">Trans Type</span>
-			<star-badge class="badge--small" text="Delivery"></star-badge>
+			<star-badge class="badge--small {{ getTransferClass() }}" text="{{ getTransferText() }}"></star-badge>
 		</div>
 
 		<!-- Amount -->
 		<div>
 			<span class="order-container__item__title">Amount</span>
 			<div>
-				<strong>455$</strong>
+				<strong>{{ order.TotalPrice }}</strong>
 				<star-badge class="badge--cod badge--small" text="COD"></star-badge>
 			</div>
 		</div>
@@ -44,15 +43,18 @@
 	<!-- Order Items -->
 	<div class="order-container__item order-items">
 		<span class="order-container__item__title">Ordered Items</span>
-		<star-badge class="badge--grey" text="Chicken x 2"></star-badge>
-		<star-badge class="badge--grey" text="Keşkek x 1"></star-badge>
+		<star-badge
+			*ngFor="let item of order.OrderItems"
+			class="badge--grey"
+			text="{{ item.meal }} x {{ item.amount }}"
+		></star-badge>
 	</div>
 
 	<div class="order-container__item action-info">
 		<!-- Additional Info -->
 		<div class="additional-info">
 			<span class="order-container__item__title">Additional information from customer</span>
-			<strong>Please send salad and green chanti with 2 paper dish</strong>
+			<strong>{{ order.Message }}</strong>
 		</div>
 
 		<div class="action-items">

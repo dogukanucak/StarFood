@@ -16,7 +16,7 @@ $gray-line-color: #e5e5e5 !default;
 **/
 $primary-color: #171719 !default;
 $secondary-color: #286ffa !default;
-$action-color: #0dc74e !default;
+$success-color: #0dc74e !default;
 $content-background-color: #ffffff !default;
 $navbar-background-color: $gray-light-4 !default;
 $aside-background-color: $gray-light-3 !default;
@@ -39,6 +39,7 @@ $active-aside-background-color: $gray-light-4 !default;
     GENERIC ITEM COLORS
 **/
 $card-background-color: #737376 !default !default;
+$card-background-color-light: $gray-light-4;
 $secondary-border-color: #2159c8 !default;
 $container-border-color: $gray-light-1 !default;
 

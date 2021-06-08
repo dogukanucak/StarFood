@@ -1,6 +1,11 @@
 @use "settings-colors" as *;
 @use "settings-layout" as *;
 
+:host {
+	margin-top: 2rem;
+	display: block;
+}
+
 .order-container {
 	color: $primary-color;
 	font-size: 1.8rem;
@@ -27,7 +32,7 @@
 }
 
 .additional-info {
-	flex: 5;
+	flex: 4;
 }
 
 .action-info {
@@ -36,13 +41,17 @@
 }
 
 .action-items {
-	flex: 1;
+	flex: 2;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 }
 
 .badge--grey {
 	margin-left: 2rem;
+}
+
+.icon-printer {
+	margin-right: 4rem;
 }
 
 strong {

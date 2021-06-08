@@ -1,1 +1,1 @@
-<star-ordercontainer></star-ordercontainer>
+<star-ordercontainer *ngFor="let order of orderList | async" [order]="order"></star-ordercontainer>

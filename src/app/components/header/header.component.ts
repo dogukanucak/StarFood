@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
 	}
 
 	private getRouteTextByURL(url: string): string {
-		console.log("URL: ", url);
 		switch (url) {
 			case "/create":
 				return "Create Order";

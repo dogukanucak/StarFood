@@ -1,0 +1,137 @@
+@use "settings-colors" as *;
+@use "settings-borders" as *;
+
+:root {
+	--button-padding: 10rem;
+}
+
+:host {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+	font-size: 1.8rem;
+	--button-padding: 10rem;
+}
+
+.order-info {
+	flex: 1;
+	padding-right: 3.5rem;
+}
+
+.order-result {
+	flex: 1;
+	border-left: 1px solid $gray-line-color;
+	padding-left: 4rem;
+}
+
+.order-info-section__item {
+	display: flex;
+	align-items: center;
+
+	span {
+		color: $main-text-color;
+		margin-left: 6rem;
+	}
+}
+
+label {
+	color: $primary-color;
+	font-weight: 700;
+	display: block;
+	margin: 0.5rem 0;
+}
+
+input[type="text"],
+input[type="tel"],
+textarea {
+	width: 100%;
+	border-width: 1px;
+	border-radius: $input-radius;
+	border: 1px solid $gray-light-1;
+	border-color: $gray-light-1;
+	outline-color: $gray-light-5;
+	line-height: 1.5;
+	padding: 0.8rem 0.8rem;
+	margin-top: 0.5rem;
+}
+
+fieldset {
+	display: flex;
+	border: none;
+}
+
+.order-form__item {
+	margin-top: 1rem;
+	margin-right: 4rem;
+}
+
+.transfer-type__field {
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-right: 4rem;
+
+	input {
+		margin-right: 2rem;
+		position: relative;
+	}
+}
+
+input[type="radio"]:checked:after {
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	top: -2px;
+	left: -1px;
+	position: absolute;
+	background-color: $active-text-color;
+	content: "";
+	display: inline-block;
+	visibility: visible;
+	border: 2px solid white;
+}
+
+.order-buttons {
+	star-button {
+		display: inline-block;
+		margin-top: 2rem;
+	}
+}
+
+.btn-action {
+	float: right;
+}
+
+.delivery-card {
+	background-color: $card-background-color-light;
+	height: 300px;
+	padding: 2rem;
+}
+
+.delivery-card__item {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1rem;
+
+	label {
+		color: $gray-dark;
+		font-weight: 500;
+	}
+}
+
+.total-price {
+	background-color: $card-background-color-light;
+	margin-top: 2.4rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+}
+
+.text-danger {
+	display: block;
+	color: red;
+	margin-top: 0.6rem;
+}

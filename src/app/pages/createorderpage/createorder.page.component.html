@@ -1,3 +1,112 @@
-<p>
-  createorderpage works!
-</p>
+<section class="order-info">
+	<section class="order-info-section">
+		<div class="order-info-section__item">
+			<label>Order Number:</label>
+			<span>#988812</span>
+		</div>
+
+		<div class="order-info-section__item">
+			<label>Date & Time:</label>
+			<span>01/01/2020 at 3:27PM</span>
+		</div>
+	</section>
+
+	<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+		<!-- Name -->
+		<div class="order-form__item">
+			<label>Name</label>
+			<input type="text" formControlName="RequesterName" />
+			<span
+				class="text-danger"
+				*ngIf="(orderFormControl.RequesterName.touched || submitted) && orderFormControl.RequesterName.errors?.required"
+			>
+				Name is required
+			</span>
+		</div>
+
+		<!-- Contact -->
+		<div class="order-form__item">
+			<label>Contact</label>
+			<input type="tel" formControlName="RequesterContact" />
+			<span
+				class="text-danger"
+				*ngIf="
+					(orderFormControl.RequesterContact.touched || submitted) && orderFormControl.RequesterContact.errors?.required
+				"
+			>
+				Contact is required
+			</span>
+		</div>
+
+		<!-- Trans Type -->
+		<div class="order-form__item">
+			<label>Tran Type</label>
+			<div class="transfer-type__field">
+				<input id="delivery" type="radio" value="0" formControlName="TransferType" />
+				<label for="delivery">Delivery</label>
+			</div>
+
+			<div class="transfer-type__field">
+				<input id="takeaway" type="radio" value="1" formControlName="TransferType" />
+				<label for="takeaway">Takeaway</label>
+			</div>
+		</div>
+
+		<!-- Message To Client -->
+		<div class="order-form__item">
+			<label>Message to client</label>
+			<textarea rows="4" formControlName="Message"></textarea>
+		</div>
+
+		<!-- Order Items -->
+		<div class="order-form__item">
+			<label>Order Items</label>
+			<ng-multiselect-dropdown
+				placeholder="Pending"
+				[settings]="dropdownSettings"
+				[data]="mealList"
+				(onSelect)="onAddMeal($event)"
+				(onDeSelect)="onRemoveMeal($event)"
+				formControlName="SelectedItems"
+			>
+			</ng-multiselect-dropdown>
+			<span
+				class="text-danger"
+				*ngIf="(orderFormControl.SelectedItems.touched || submitted) && orderFormControl.SelectedItems.errors?.required"
+			>
+				Please Select One Meal At Least
+			</span>
+		</div>
+	</form>
+</section>
+
+<section class="order-result">
+	<div class="delivery-card">
+		<h3>Delivery Details</h3>
+		<div class="delivery-card__item">
+			<label>Order Item</label>
+			<label>Number</label>
+			<label>Cost</label>
+		</div>
+		<div *ngFor="let meal of selectedMeals" class="delivery-card__item">
+			<span>{{ meal.Name }}</span>
+			<span>{{ meal.quantity }}</span>
+			<span>{{ meal.totalPrice }}$</span>
+		</div>
+	</div>
+
+	<div class="total-price">
+		<label>Total Amount:</label>
+		<span>{{ totalPriceSubject | async }}</span>
+	</div>
+
+	<div class="order-buttons">
+		<star-button *ngIf="canOrder" class="btn-cancel" title="Cancel" (onClick)="onCancelOrder()"></star-button>
+		<star-button
+			class="btn-action"
+			[class.btn-success]="canOrder"
+			title="Add Order"
+			(onClick)="onSubmit()"
+		></star-button>
+	</div>
+</section>

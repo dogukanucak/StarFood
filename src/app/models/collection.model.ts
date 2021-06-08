@@ -5,17 +5,25 @@ export type FireBaseDoc = {
 };
 
 export type Order = FireBaseDoc & {
-	date: Date;
+	Date: Date;
 	ID: number;
-	message: string;
-	orderItems: OrderItem[];
-	orderState: OrderStateEnum;
-	transferType: TransferTypeEnum;
+	RequesterName: string;
+	RequesterContact: string;
+	Message: string;
+	OrderItems: OrderItem[];
+	OrderState: OrderStateEnum;
+	TransferType: TransferTypeEnum;
+	TotalPrice: number;
 };
 
 export type Meal = FireBaseDoc & {
-	name: string;
-	price: number;
+	Name: string;
+	Price: number;
+};
+
+export type MealWithQuantity = Meal & {
+	quantity: number;
+	totalPrice: number;
 };
 
 export type OrderItem = {

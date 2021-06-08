@@ -2,8 +2,9 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserModule } from "@angular/platform-browser";
+import { NgMultiSelectDropDownModule } from "ng-multiselect-dropdown";
 import { environment } from "src/environments/environment";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -30,8 +31,10 @@ const PAGES = [CreateOrderPageComponent, AcceptedOrderPageComponent];
 		FormsModule,
 		CommonModule,
 		AppRoutingModule,
+		ReactiveFormsModule,
 		AngularFireModule.initializeApp(environment.firebaseConfig),
 		AngularFirestoreModule,
+		NgMultiSelectDropDownModule.forRoot(),
 	],
 	providers: [OrderMenuService, ActionMenuService, StaticDataService, OrderService],
 	bootstrap: [AppComponent],
